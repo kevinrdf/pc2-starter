@@ -20,9 +20,12 @@ export default {
     filtrarPais(e) {
       // TODO: Implementar. filtra el país de acuerdo al valor del input. Hint: Recuerda la función filter
       const filtro = e.target.value;
+      this.countries = countries.filter((input) => filtro.countries.includes(input.num)
+      );
     },
   },
 };
+
 </script>
 
 <template>
@@ -35,6 +38,7 @@ export default {
   </div>
   <div class="countries-container">
     <!--//TODO: pasar una propiedad para determinar si al componente se le puede hacer click -->
+    @click="";
     <CountryComponent
       v-for="(country, index) in countries"
       :key="index"

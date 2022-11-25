@@ -9,6 +9,7 @@ export default {
     "region",
     "code",
     //TODO: crear una propiedad para determinar si al componente se le puede hacer click
+    "click",
   ],
 };
 </script>
@@ -16,13 +17,24 @@ export default {
 <template>
   <!--TODO: Utilizar la propiedad creada para controlar el click. Cuando el componente es "clickeable", redirigir a la pagina del pais.
   Mira las rutas para ver como redirigir al usuario.-->
-  <div
-  >
+  <div>
+  <p class="underline">{{ name }}</p>
+    <p
+        @click="this.$router.push({ path: `/countries/${code}` })"
+        class="underline"
+      >
+    {{ country }}
+  </p>
   <!--TODO: Poblar el HTML con las propiedades. Usar https://countryflagsapi.com/png/${code}-->
   <img
       width="200"
       height="200"
+      src="https://countryflagsapi.com/png/${code}"
     />
+  <h1>Name: {{name}}</h1> 
+  <h2>Capital: {{capital}}</h2> 
+  <h3>Moneda: {{currency_name}}</h3> 
+  <h4>Región: {{region}}</h4> 
   </div>
 </template>
 
